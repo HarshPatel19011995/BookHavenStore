@@ -1142,52 +1142,122 @@ button:hover,
 /* ===========================
    MOBILE HEADER FIX — Figma Style
 =========================== */
+/* ===========================
+   MOBILE HEADER — Enhanced Figma Version
+=========================== */
 @media (max-width: 768px) {
 
     .main-header {
-        height: 80px;
-        padding: 0 20px;
+        height: 75px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: height 0.25s ease;
+    }
+
+    /* Shrink header on scroll */
+    .main-header.scrolled {
+        height: 60px;
     }
 
     .header-container {
-        padding: 0 20px;
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: space-between; 
         align-items: center;
-        flex-direction: row;                    /* FIX */
-        gap: 0;
+        padding: 0;
     }
 
-    /* Hide desktop navigation */
+    /* LEFT: Hamburger + Logo */
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-left: 0;
+    }
+
+    .logo {
+        width: 45px;
+        transition: width 0.25s ease;
+    }
+
+    .main-header.scrolled .logo {
+        width: 38px;
+    }
+
+    /* WEBSITE NAME */
+    .site-title {
+        font-size: 18px;
+        font-weight: bold;
+        white-space: nowrap;
+        margin-left: 6px;
+        transition: font-size 0.25s ease, opacity 0.25s ease;
+    }
+
+    .main-header.scrolled .site-title {
+        font-size: 16px;
+        opacity: 0.85;
+    }
+
+    /* Desktop nav hidden */
     .nav-menu {
         display: none;
     }
 
-    /* Mobile hamburger + logo + cart layout */
-    .logo-section {
-        margin-left: 0;
-        gap: 10px;
-    }
-
-    .logo {
-        width: 55px;
-    }
-
+    /* CART */
     .cart {
         margin-right: 0;
     }
 
-    /* MOBILE MENU PANEL (full screen slide-in) */
+    /* ==========================================
+       HAMBURGER ANIMATION (Menu → X)
+    =========================================== */
+    .hamburger {
+        width: 28px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 2100;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background: #2E2E4E;
+        border-radius: 4px;
+        transition: 0.4s ease;
+    }
+
+    /* transform into X */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* =======================
+       MOBILE SLIDE MENU
+    ======================== */
     .mobile-menu {
         position: fixed;
         top: 0;
-        left: -100%;        /* slide from left */
+        left: -100%;
         width: 80%;
         height: 100vh;
         background: #ffffff;
-        box-shadow: 4px 0 10px rgba(0,0,0,0.2);
-        padding: 120px 30px;
-        transition: left 0.4s ease-in-out;
+        padding: 100px 30px;
+        box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+        transition: left 0.35s ease;
         z-index: 2000;
     }
 
@@ -1196,35 +1266,14 @@ button:hover,
     }
 
     .mobile-menu a {
+        font-size: 20px;
+        padding: 14px 0;
         display: block;
-        font-size: 22px;
-        font-weight: bold;
-        padding: 12px 0;
+        border-bottom: 1px solid #eee;
         color: #2E2E4E;
-        border-bottom: 1px solid #e5e5e5;
+        font-weight: 600;
     }
 }
 
-@media (max-width: 768px) {
-
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-menu {
-        margin-left: 0;
-        gap: 15px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        row-gap: 40px;
-    }
-
-    .newsletter-row {
-        flex-direction: column;
-    }
-}
 
 
