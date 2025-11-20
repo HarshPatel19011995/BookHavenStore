@@ -41,7 +41,18 @@
 
 <!-- ======================= PAGE CONTENT WRAPPER ======================= -->
 <div class="page-content">
-    <!-- Add your hero or main page content here -->
+  
+   <section class="gallery-hero">
+    <div class="gallery-row">
+        <h1>Gallery — Explore Our Collection</h1>
+
+        <a href="cart.html" class="gallery-btn">View Shopping Cart</a>
+    </div>
+</section>
+
+
+
+
 </div>
 <!-- ======================= END PAGE CONTENT ======================= -->
 
@@ -94,3 +105,58 @@
 
 </body>
 </html>
+
+
+<script>
+const slider = document.querySelector('.category-scroll');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+
+    // prevent vertical page scroll while dragging
+    e.preventDefault();
+});
+
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault(); // stop vertical scroll
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5; // drag speed
+    slider.scrollLeft = scrollLeft - walk;
+});
+
+/* TOUCH SUPPORT */
+slider.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+}, { passive: false });
+
+slider.addEventListener('touchmove', (e) => {
+    if(!isDown) return;
+    e.preventDefault(); // stop page vertical scroll
+    const x = e.touches[0].pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+}, { passive: false });
+
+slider.addEventListener('touchend', () => {
+    isDown = false;
+});
+</script>
