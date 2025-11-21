@@ -11,6 +11,10 @@
     --text-dark: #2E2E4E;
     --text-light: #ffffff;
     --bg-light: #F5F2E7;
+     /* --theme-primary: #7D2AE8; */
+    /* --theme-text-dark: #2E2E4E; */
+    --theme-border-light: #ececec;
+    --theme-menu-bg: rgba(255,255,255,1);
 }
 
 /* ==============================================================
@@ -1139,85 +1143,21 @@ button:hover,
 /* ==============================================================
    RESPONSIVE
 ============================================================== */
-/* ===========================
-   MOBILE HEADER FIX — Figma Style
-=========================== */
+
 /* ===========================
    MOBILE HEADER — Enhanced Figma Version
 =========================== */
 @media (max-width: 768px) {
 
-    .main-header {
-        height: 75px;
-        padding: 0 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: height 0.25s ease;
-    }
-
-    /* Shrink header on scroll */
-    .main-header.scrolled {
-        height: 60px;
-    }
-
-    .header-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between; 
-        align-items: center;
-        padding: 0;
-    }
-
-    /* LEFT: Hamburger + Logo */
-    .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-left: 0;
-    }
-
-    .logo {
-        width: 45px;
-        transition: width 0.25s ease;
-    }
-
-    .main-header.scrolled .logo {
-        width: 38px;
-    }
-
-    /* WEBSITE NAME */
-    .site-title {
-        font-size: 18px;
-        font-weight: bold;
-        white-space: nowrap;
-        margin-left: 6px;
-        transition: font-size 0.25s ease, opacity 0.25s ease;
-    }
-
-    .main-header.scrolled .site-title {
-        font-size: 16px;
-        opacity: 0.85;
-    }
-
-    /* Desktop nav hidden */
     .nav-menu {
-        display: none;
+        display: none; /* hide desktop nav */
     }
 
-    /* CART */
-    .cart {
-        margin-right: 0;
-    }
-
-    /* ==========================================
-       HAMBURGER ANIMATION (Menu → X)
-    =========================================== */
+    /* SHOW HAMBURGER ONLY ON MOBILE */
     .hamburger {
+        display: flex;
         width: 28px;
         height: 20px;
-        display: flex;
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
@@ -1232,48 +1172,206 @@ button:hover,
         transition: 0.4s ease;
     }
 
-    /* transform into X */
+    /* ANIMATION → MENU TURNS INTO X */
     .hamburger.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
-
     .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* =======================
-       MOBILE SLIDE MENU
-    ======================== */
-    .mobile-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 80%;
-        height: 100vh;
-        background: #ffffff;
-        padding: 100px 30px;
-        box-shadow: 3px 0 10px rgba(0,0,0,0.2);
-        transition: left 0.35s ease;
-        z-index: 2000;
+    .main-header {
+        height: 75px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: height 0.25s ease;
     }
 
-    .mobile-menu.open {
-        left: 0;
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* ADJUST LOGO + TITLE FOR MOBILE */
+    /* ============================
+   GLOBAL HEADER SPACING FIX
+============================ */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; /* ↑ more gap so title & cart are not touching */
+    padding: 12px 16px;
+}
+
+/* LOGO */
+.logo {
+    width: 45px;
+}
+
+/* SITE TITLE */
+.site-title {
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-right: auto; /* keeps title centered with spacing */
+}
+
+/* CART ICON */
+.cart-icon {
+    width: 32px;
+}
+
+/* ============================
+   MOBILE SLIDE MENU
+============================ */
+/* ============================
+   BACKDROP OVERLAY
+============================ */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.35s ease;
+    z-index: 1500;
+}
+
+.menu-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================
+   MODERN MOBILE MENU
+============================ */
+.mobile-menu {
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--theme-menu-bg);
+    backdrop-filter: blur(14px);
+    box-shadow: 6px 0 22px rgba(0,0,0,0.25);
+
+    padding: 40px 28px;
+    border-radius: 0 20px 20px 0;
+
+    transition: left 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 2000;
+}
+
+.mobile-menu.open {
+    left: 0;
+}
+
+/* ============================
+   PERFECT CLOSE BUTTON
+   — Always at menu edge
+   — No flicker
+============================ */
+.close-menu-btn {
+    position: absolute;          /* <-- relative to .mobile-menu */
+    top: 20px;
+    right: -50px;                /* <-- sits exactly outside edge */
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    background: var(--red-accent);
+    color: var(--text-light);
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.25);
+
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.mobile-menu.open .close-menu-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.close-menu-btn:hover {
+    background: var(--red-accent);
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+/* .close-menu-btn:hover {
+    transform: rotate(90deg);
+} */
+
+
+/* Menu Links */
+.mobile-menu a {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 16px 0;
+
+    color: var(--primary);
+    border-bottom: 1px solid var(--theme-border-light);
+
+    opacity: 0.9;
+
+    transition:
+        padding-left 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Hover Animation */
+.mobile-menu a:hover {
+    color: var(--primary);                /* use theme */
+    padding-left: 14px;
+    opacity: 1;
+    border-color: var(--primary);         /* animate border to theme color */
+}
+
+
+
+/* ============================
+   SMALL SCREEN FIX
+============================ */
+@media (max-width: 480px) {
+
+    .mobile-menu {
+        width: 80%;
+        padding: 35px 24px;
     }
 
     .mobile-menu a {
         font-size: 20px;
-        padding: 14px 0;
-        display: block;
-        border-bottom: 1px solid #eee;
-        color: #2E2E4E;
-        font-weight: 600;
     }
 }
+
+
 
 
 

@@ -14,13 +14,20 @@
 <header class="main-header">
     <div class="header-container">
 
-        <!-- Logo + Title -->
+        <!-- MOBILE HAMBURGER (hidden on desktop) -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- LOGO + TITLE -->
         <div class="logo-section">
             <img src="assets/images/logo.png" class="logo" alt="Book Haven Logo">
             <h1 class="site-title">Book Haven Bookstore</h1>
         </div>
 
-        <!-- Navigation -->
+        <!-- DESKTOP NAV -->
         <nav class="nav-menu">
             <a href="index.html">Home</a>
             <a href="gallery.html">Gallery</a>
@@ -28,7 +35,7 @@
             <a href="events.html">Events</a>
         </nav>
 
-        <!-- Cart Icon -->
+        <!-- CART ICON -->
         <div class="cart">
             <img src="assets/images/cart.png" class="cart-icon" alt="Cart">
         </div>
@@ -36,8 +43,23 @@
     </div>
 </header>
 
-<!-- Header bottom stroke -->
+<div class="menu-overlay"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu-btn">✕</button>
+
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="events.html">Events</a>
+</div>
+
+
+
+
+<!-- HEADER BOTTOM LINE -->
 <div class="header-stroke"></div>
+
 
 <!-- ======================= PAGE CONTENT WRAPPER ======================= -->
 <div class="page-content">
@@ -300,7 +322,7 @@
 <div class="footer-bottom">
     © 2025 Book Haven Bookstore. All rights reserved
 </div>
-<script src="mobile-header.js"></script>
+<script src="js/mobile-header.js"></script>
 </body>
 </html>
 
