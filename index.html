@@ -10,24 +10,25 @@
 
 <body>
 
+
 <!-- ======================= FIXED HEADER ======================= -->
 <header class="main-header">
     <div class="header-container">
 
-        <!-- MOBILE HAMBURGER (hidden on desktop) -->
+        <!-- HAMBURGER – visible only on mobile -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <!-- LOGO + TITLE -->
+        <!-- LOGO + TITLE (shared by desktop + mobile) -->
         <div class="logo-section">
             <img src="assets/images/logo.png" class="logo" alt="Book Haven Logo">
             <h1 class="site-title">Book Haven Bookstore</h1>
         </div>
 
-        <!-- DESKTOP NAV -->
+        <!-- DESKTOP NAV – hidden on mobile -->
         <nav class="nav-menu">
             <a href="index.html">Home</a>
             <a href="gallery.html">Gallery</a>
@@ -35,7 +36,7 @@
             <a href="events.html">Events</a>
         </nav>
 
-        <!-- CART ICON -->
+        <!-- CART ICON (visible on both) -->
         <div class="cart">
             <img src="assets/images/cart.png" class="cart-icon" alt="Cart">
         </div>
@@ -43,8 +44,10 @@
     </div>
 </header>
 
+<!-- OVERLAY -->
 <div class="menu-overlay"></div>
 
+<!-- MOBILE SLIDE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <button class="close-menu-btn">✕</button>
 
@@ -54,11 +57,10 @@
     <a href="events.html">Events</a>
 </div>
 
-
-
-
-<!-- HEADER BOTTOM LINE -->
+<!-- BOTTOM LINE -->
 <div class="header-stroke"></div>
+
+
 
 
 <!-- ======================= PAGE CONTENT WRAPPER ======================= -->

@@ -100,7 +100,7 @@ button:hover,
    HEADER — FIXED + SMOOTH SCROLL SHADOW
 ============================================================== */
 
-.main-header {
+/* .main-header {
     background: #ffffff;
     border-bottom: 1px solid #DDDDDD;
     height: 100px;
@@ -114,30 +114,65 @@ button:hover,
     align-items: center;
 
     transition: box-shadow 0.25s ease;
-}
+} */
+.main-header {
+    background: #ffffff;
+    border-bottom: 1px solid #DDDDDD;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center whole header */
+}
 .main-header.scrolled {
     box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
-.header-container {
+/* .header-container {
     width: 100%;
-    max-width: 1440px;
+    max-width: auto;
     margin: 0 auto;
     padding: 0 50px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+} */
+
+.header-container {
+    width: 100%;
+    max-width: 1700px;      /* Wider container */
+    padding: 0 30px;        /* SMALL left/right padding */
+    
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
 }
 
-.logo-section {
+/* Left side: Logo + Title */
+.brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+/* .logo-section {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-left: 60px;
-}
+} */
 
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 50px;             /* FIX: remove forced left space */
+}
 .logo {
     width: 80px;
 }
@@ -145,7 +180,8 @@ button:hover,
 .nav-menu {
     display: flex;
     gap: 30px;
-    margin-left: 180px;
+    /* margin-left: 280px; */
+    margin-left: auto;
 }
 
 .nav-menu a {
@@ -189,7 +225,9 @@ button:hover,
 }
 
 .cart {
-    margin-right: 60px;
+    /* margin-right: 120px; */
+    margin-left: auto;
+    margin-right: 50px;
 }
 
 /* Header bottom stroke */
@@ -1186,45 +1224,60 @@ button:hover,
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* -----------------------------
-       HEADER FIX (iPhone Safe)
-    ------------------------------ */
-    .main-header {
-        height: 75px;
-        padding: calc(env(safe-area-inset-top) + 10px) 15px 0 15px;
-        overflow: visible !important;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* IMPORTANT FIX */
+    /* ===========================
+   MOBILE HEADER FIX
+=========================== */
+@media (max-width: 768px) {
+
+    /* Hide desktop navigation */
+    .nav-menu {
+        display: none;
     }
 
+    /* Mobile reposition */
     .header-container {
-        width: 100%;
+        padding: 0 15px;
+    }
+
+    /* Logo + title grouped (brand-wrap behavior) */
+    .logo-section {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 14px;
+        gap: 10px;
         min-width: 0;
     }
 
     .logo {
         width: 45px;
-        flex-shrink: 0;
     }
+    .hamburger {
+    margin-right: 12px;     /* small spacing between hamburger & logo */
+}
 
-    .site-title {
+.logo-section {
+    gap: 12px;              /* tighter on mobile */
+    margin-left: 12px;
+}
+
+.site-title {
         font-size: 18px;
-        white-space: nowrap;
+        /* max-width: 130px; */
         overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 130px;
-        margin-right: auto;
+        text-overflow:clip;
+        white-space: nowrap;
     }
 
     .cart-icon {
         width: 32px;
-        flex-shrink: 0;
     }
+
+    .cart {
+    /* margin-right: 120px; */
+    margin-left: auto;
+     margin-right: 10px; */
+}
+
+}
 
     /* -----------------------------
        BACKDROP OVERLAY
@@ -1255,7 +1308,7 @@ button:hover,
         position: fixed;
         top: 0;
         left: -100%;
-        width: 75%;
+        width: 50%;
         max-width: 320px;
 
         height: 100dvh;
