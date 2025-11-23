@@ -131,7 +131,7 @@
         position: fixed;
         top: 0;
         left: -100%;
-        width: 40%;
+        width: 50%;
         max-width: 330px;
         height: 100dvh;
         background: #ffffff;
@@ -196,14 +196,16 @@
         padding: 40px 20px;
         height: auto;
         display: block;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-container {
-        display: block;
+        display: flex;
+        flex-direction: column-reverse;   /* ⬅ IMAGE FIRST */
         width: 100%;
         height: auto;
         padding: 0;
+        gap: 30px;
     }
 
     .hero-left {
@@ -211,15 +213,22 @@
     }
 
     .hero-title {
-        font-size: 30px;
+        font-family: Georgia;
+        font-size: 26px;
         line-height: 1.3;
         text-align: left;
+        color: #C1CFD6;
+        margin: 0px 20px 5px 20px;
     }
 
     .hero-text {
-        font-size: 16px;
+        font-family: Arial;
+        font-size: 14px;
+        font-weight: regular;
         margin-bottom: 20px;
         text-align: left;
+        color: #F5F5F7;
+        margin: 0px 20px 5px 20px;
     }
 
     .hero-right {
@@ -235,4 +244,22 @@
     .hero-book-img {
         border-radius: 14px;
     }
+
+    .hero-btn {
+    background: #742C36;
+    color: white;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 10px;
+    transition: 0.25s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+}
 }
