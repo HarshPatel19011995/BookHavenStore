@@ -9,6 +9,9 @@
     <!-- Desktop Base Styles -->
     <link rel="stylesheet" href="css/desktop.css">
 
+    <!-- Tablet Portrait Overrides -->
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 769px) and (max-width: 1024px)">
+
     <!-- Mobile Overrides -->
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 768px)">
 </head>
@@ -26,13 +29,13 @@
             <span></span>
         </div>
 
-        <!-- LOGO + TITLE (shared by desktop + mobile) -->
+        <!-- LOGO + TITLE -->
         <div class="logo-section">
             <img src="assets/images/logo.png" class="logo" alt="Book Haven Logo">
             <h1 class="site-title">Book Haven Bookstore</h1>
         </div>
 
-        <!-- DESKTOP MENU -->
+        <!-- DESKTOP NAV MENU -->
         <nav class="nav-menu">
             <a href="index.html">Home</a>
             <a href="gallery.html">Gallery</a>
@@ -48,7 +51,7 @@
     </div>
 </header>
 
-<!-- OVERLAY (Mobile) -->
+<!-- MOBILE OVERLAY -->
 <div class="menu-overlay"></div>
 
 <!-- MOBILE SLIDE MENU -->
@@ -61,14 +64,14 @@
     <a href="events.html">Events</a>
 </div>
 
-<!-- Divider below header -->
+<!-- HEADER DIVIDER -->
 <div class="header-stroke"></div>
 
 
 <!-- ======================= PAGE CONTENT ======================= -->
 <div class="page-content">
 
-    <!-- HERO -->
+    <!-- ======================= HERO ======================= -->
     <section class="hero">
         <div class="hero-container">
 
@@ -90,7 +93,8 @@
     <div class="section-divider"></div>
     <div class="section-Wdivider"></div>
 
-    <!-- FEATURES -->
+
+    <!-- ======================= FEATURES ======================= -->
     <section class="features">
         <div class="features-container">
 
@@ -132,7 +136,8 @@
     <div class="section-divider"></div>
     <div class="section-Wdivider"></div>
 
-    <!-- FEATURED BOOKS -->
+
+    <!-- ======================= FEATURED BOOKS ======================= -->
     <section class="featured-books">
         <h2 class="featured-title">Featured Books – Top Picks</h2>
         <div class="underline"></div>
@@ -175,7 +180,8 @@
     <div class="section-divider"></div>
     <div class="section-Wdivider"></div>
 
-    <!-- PERKS -->
+
+    <!-- ======================= PERKS ======================= -->
     <section class="shopping-perks">
         <div class="perks-container">
 
@@ -214,7 +220,8 @@
         </div>
     </section>
 
-    <!-- CATEGORY SCROLL -->
+
+    <!-- ======================= CATEGORY SCROLL ======================= -->
     <section class="category-section">
         <h2 class="category-title">Browse by Category</h2>
         <div class="category-underline"></div>
@@ -272,7 +279,6 @@
 
 <!-- ========================= FOOTER ========================= -->
 <footer class="footer">
-
     <div class="footer-container">
 
         <div class="footer-section newsletter">
@@ -305,7 +311,6 @@
         </div>
 
     </div>
-
 </footer>
 
 <div class="footer-bottom">
@@ -316,7 +321,7 @@
 <!-- MOBILE MENU SCRIPT -->
 <script src="js/mobile-header.js"></script>
 
-<!-- SCROLL DRAG SCRIPT -->
+<!-- CATEGORY DRAG SCROLL -->
 <script>
 const slider = document.querySelector('.category-scroll');
 let isDown = false;
@@ -340,7 +345,6 @@ slider.addEventListener('mousemove', (e) => {
     e.preventDefault();
 });
 
-/* Touch dragging */
 slider.addEventListener('touchstart', (e) => {
     isDown = true;
     startX = e.touches[0].pageX - slider.offsetLeft;
