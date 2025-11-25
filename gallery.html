@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Haven Bookstore | Home</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Desktop Base Styles -->
+    <link rel="stylesheet" href="css/desktop.css">
+
+    <!-- Tablet Portrait Overrides -->
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 769px) and (max-width: 1024px)">
+
+    <!-- Mobile Overrides -->
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 768px)">
 </head>
 
 <body>
@@ -14,13 +22,20 @@
 <header class="main-header">
     <div class="header-container">
 
-        <!-- Logo + Title -->
+        <!-- HAMBURGER – visible only on mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- LOGO + TITLE -->
         <div class="logo-section">
             <img src="assets/images/logo.png" class="logo" alt="Book Haven Logo">
             <h1 class="site-title">Book Haven Bookstore</h1>
         </div>
 
-        <!-- Navigation -->
+        <!-- DESKTOP NAV MENU -->
         <nav class="nav-menu">
             <a href="index.html">Home</a>
             <a href="gallery.html">Gallery</a>
@@ -28,7 +43,7 @@
             <a href="events.html">Events</a>
         </nav>
 
-        <!-- Cart Icon -->
+        <!-- CART ICON -->
         <div class="cart">
             <img src="assets/images/cart.png" class="cart-icon" alt="Cart">
         </div>
@@ -36,7 +51,20 @@
     </div>
 </header>
 
-<!-- Header bottom stroke -->
+<!-- MOBILE OVERLAY -->
+<div class="menu-overlay"></div>
+
+<!-- MOBILE SLIDE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu-btn">✕</button>
+
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="events.html">Events</a>
+</div>
+
+<!-- HEADER DIVIDER -->
 <div class="header-stroke"></div>
 
 <!-- ======================= PAGE CONTENT WRAPPER ======================= -->
@@ -45,8 +73,70 @@
    <section class="gallery-hero">
     <div class="gallery-row">
         <h1>Gallery — Explore Our Collection</h1>
+        <a href="#" class="view-cart-btn">View Shopping Cart</a>
+    </div>
+</section>
 
-        <a href="cart.html" class="gallery-btn">View Shopping Cart</a>
+<div class="section-divider"></div>
+<div class="section-Wdivider"></div>
+
+<!-- ======================================
+     GALLERY BOOK LIST SECTION
+====================================== -->
+
+
+
+<section class="gallery-table">
+    <div class="gallery-table-container">
+
+        <!-- Item Row -->
+        <div class="gallery-row-item">
+            <div class="gallery-img-col">
+                <img src="assets/images/Client3_Book1.png" alt="">
+            </div>
+
+            <div class="gallery-desc-col">
+                <h3>The Mountains Between Us</h3>
+                <p>A gripping tale of survival and love set against the backdrop of snow-capped mountains.</p>
+            </div>
+
+            <div class="gallery-btn-col">
+                <button class="gallery-add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Item Row 2 -->
+        <div class="gallery-row-item">
+            <div class="gallery-img-col">
+                <img src="assets/images/Client3_Book2.png" alt="">
+            </div>
+
+            <div class="gallery-desc-col">
+                <h3>City Lights</h3>
+                <p>An illuminating exploration of urban life, blending poetry and emotion.</p>
+            </div>
+
+            <div class="gallery-btn-col">
+                <button class="gallery-add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Item Row 3 -->
+        <div class="gallery-row-item">
+            <div class="gallery-img-col">
+                <img src="assets/images/Client3_Book3.png" alt="">
+            </div>
+
+            <div class="gallery-desc-col">
+                <h3>Journey Into The Unknown</h3>
+                <p>Embark on an adventure through mysterious lands full of wonder and danger.</p>
+            </div>
+
+            <div class="gallery-btn-col">
+                <button class="gallery-add-btn">Add to Cart</button>
+            </div>
+        </div>
+
     </div>
 </section>
 
