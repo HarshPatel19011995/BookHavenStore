@@ -16,6 +16,15 @@
     --theme-border-light: #ececec;
     --theme-menu-bg: rgba(255,255,255,1);
 }
+/* ==============================================================
+   EMBEDDED COMIC SANS MS FONT
+============================================================== */
+@font-face {
+    font-family: "ComicNeue";
+    src: url("fonts/ComicNeue-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* ==============================================================
    GLOBAL RESET + PAGE STRUCTURE
@@ -48,14 +57,70 @@ a {
 /* ==============================================================
    TYPOGRAPHY OPTION 3
 ============================================================== */
-
+/* 
 .display-title { font-family: "Courier New", monospace; font-size: 40px; font-weight: bold; }
 .site-title    { font-family: Georgia, serif; font-size: 30px; font-weight: bold; }
 h2             { font-family: Arial, sans-serif; font-size: 25px; font-weight: bold; }
 .subtitle      { font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; }
 p              { font-family: Arial, sans-serif; font-size: 16px; }
 .body-strong   { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
-.caption       { font-family: Calibri, sans-serif; font-size: 11px; }
+.caption       { font-family: Calibri, sans-serif; font-size: 11px; } */
+
+/* Display Title (40px Courier New Bold) */
+.display-title { 
+    font-family: "Courier New", monospace; 
+    font-size: 40px; 
+    font-weight: bold; 
+}
+
+/* Site Title (30px Georgia Bold) */
+.site-title { 
+    font-family: Georgia, serif; 
+    font-size: 30px; 
+    font-weight: bold; 
+}
+
+/* H2 Titles (25px Arial Bold) */
+h2 { 
+    font-family: Arial, sans-serif; 
+    font-size: 25px; 
+    font-weight: bold; 
+}
+
+/* Subtitle (15px Arial Bold) */
+.subtitle { 
+    font-family: Arial, sans-serif; 
+    font-size: 15px; 
+    font-weight: bold; 
+}
+
+/* Base Body Text (16px Arial Normal) */
+p { 
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    font-weight: normal; 
+}
+
+/* Body Strong (16px Arial Bold) */
+.body-strong { 
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    font-weight: bold; 
+}
+
+/* Body Large (20px Comic Sans MS Normal) */
+.body-large { 
+    font-family: "ComicNeue", cursive; 
+    font-size: 20px; 
+    font-weight: normal; 
+}
+
+/* Captions (11px Calibri Normal) */
+.caption { 
+    font-family: Calibri, sans-serif; 
+    font-size: 11px; 
+    font-weight: normal; 
+}
 
 /* ==============================================================
    GLOBAL BUTTON ANIMATIONS
@@ -1229,7 +1294,7 @@ button:hover,
 
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 /* One Row */
@@ -1284,12 +1349,15 @@ button:hover,
 
 /* Description */
 .gallery-desc-col h3 {
+    /* font-family: Arial; */
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
     color: #2E2E4E;
 }
 
 .gallery-desc-col p {
+    /* font-family: comic; */
     font-size: 16px;
     color: #3D525D;
     margin: 10px 0 0 0;
