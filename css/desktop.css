@@ -1555,3 +1555,248 @@ button:hover,
         gap: 40px;
     }
 }
+
+/* ===========================
+      EVENTS SECTION
+=========================== */
+
+.events-section {
+    background: var(--bg-light); /* matches your theme */
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+}
+
+.events-title {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 40px;
+}
+
+/* Container for cards */
+.events-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    gap: 30px;
+}
+
+/* Event Card */
+.event-card {
+    background: #ffffff;
+    border-radius: 14px;
+
+    display: grid;
+    grid-template-columns: 200px 1fr;
+
+    padding: 30px;
+    align-items: center;
+
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
+    transition: 0.25s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 10px 22px rgba(0,0,0,0.22);
+}
+
+/* Image */
+.event-img img {
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Content */
+.event-info {
+    text-align: left;
+    padding-left: 25px;
+}
+
+.event-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent);
+    margin: 0 0 10px 0;
+}
+
+.event-date {
+    font-size: 16px;
+    color: var(--red-accent);
+    margin: 0 0 15px 0;
+}
+
+.event-desc {
+    font-size: 16px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* Make event button match global buttons */
+.event-btn {
+    padding: 12px 28px;          /* same size as others */
+    border-radius: 10px;         /* match global buttons */
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    background: #742C36;
+    color: white;
+    border: none;
+    cursor: pointer;
+     transition: 0.3s;
+}
+
+/* Hover — matches ALL your buttons */
+.event-btn:hover {
+     /* background: #5C2E5C; */
+    transform: scale(1.05);
+    background-color: #5E1E24;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* ===========================
+   COMMUNITY EVENT CARD
+=========================== */
+
+.community-event-section {
+    padding: 20px 20px;
+    background: #F8F8F8;
+}
+
+.community-event-card {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* IMAGE SIDE */
+.community-event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXT SIDE */
+.community-event-info {
+    padding: 40px;
+}
+
+.community-event-info h2 {
+    font-size: 30px;
+    color: #5C2E5C;
+    margin-bottom: 15px;
+}
+
+.community-event-info .event-date {
+    font-size: 18px;
+    color: var(--red-accent);
+    margin-bottom: 20px;
+}
+
+.community-event-info .event-desc {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* RESPONSIVE */
+/* @media (max-width: 880px) {
+    .community-event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .community-event-info {
+        padding: 25px;
+        text-align: center;
+    }
+} */
+
+
+
+/* ===========================
+   TESTIMONIALS SECTION
+=========================== */
+.testimonials-section {
+    padding: 70px 20px;
+    background: #F8F8F8;
+}
+
+.testimonials-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #5C2E5C;
+    margin-bottom: 40px;
+}
+
+/* Horizontal scroll container */
+.testimonials-scroll {
+    display: flex;
+    gap: 30px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+
+    padding: 10px 20px 30px;
+    cursor: grab;
+}
+
+.testimonials-scroll:active {
+    cursor: grabbing;
+}
+
+/* Hide scrollbar */
+.testimonials-scroll::-webkit-scrollbar {
+    display: none;
+}
+.testimonials-scroll {
+    scrollbar-width: none;
+}
+
+/* Card styling */
+.testimonial-card {
+    min-width: 380px;
+    max-width: 380px;
+
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    transition: 0.25s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+/* Text */
+.testimonial-text {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-size: 18px;
+    font-weight: bold;
+    color: #742C36; /* your maroon theme */
+}
