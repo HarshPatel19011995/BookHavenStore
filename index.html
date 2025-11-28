@@ -276,6 +276,27 @@
 </div>
 <!-- PAGE CONTENT END -->
 
+<!-- ========================= CART MODAL ========================= -->
+<div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
+
+        <h2 class="cart-title">Your Cart</h2>
+
+        <!-- Scrollable cart items -->
+        <div id="cartItems" class="cart-items-container">
+            <!-- Cart items will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Buttons -->
+        <div class="cart-buttons">
+            <button id="clearCartBtn" class="clear-cart-btn">Clear Cart</button>
+            <button id="closeCartBtn" class="close-cart-btn">Close</button>
+        </div>
+
+    </div>
+</div>
+
+
 
 <!-- ========================= FOOTER ========================= -->
 <footer class="footer">
@@ -320,7 +341,7 @@
 
 <!-- MOBILE MENU SCRIPT -->
 <script src="js/mobile-header.js"></script>
-
+<script src="js/cart.js"></script>
 <!-- CATEGORY DRAG SCROLL -->
 <script>
 const slider = document.querySelector('.category-scroll');

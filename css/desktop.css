@@ -1800,3 +1800,163 @@ button:hover,
     font-weight: bold;
     color: #742C36; /* your maroon theme */
 }
+
+
+/* modal overlay */
+.cart-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 9999;
+}
+
+/* modal window */
+.cart-modal-content {
+    width: 90%;
+    max-width: 480px;
+    background: #ffffff;
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 16px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* modal title */
+.cart-title {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #2E2E4E;
+    font-weight: 700;
+}
+
+/* scrollable list */
+.cart-items-container {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 5px;
+}
+
+/* scrollbar styling */
+.cart-items-container::-webkit-scrollbar {
+    width: 6px;
+}
+.cart-items-container::-webkit-scrollbar-thumb {
+    background: #c6c6c6;
+    border-radius: 10px;
+}
+
+/* cart card row fix */
+.cart-item-card {
+    background: #FFF7F7;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;   /* <-- animation added */
+}
+
+/* HOVER EFFECT */
+.cart-item-card:hover {
+    transform: translateY(-3px);                                /* subtle lift */
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);                     /* deeper shadow */
+}
+/* left image block */
+.cart-item-left {
+    width: 120px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.cart-book-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* text column */
+.cart-item-middle {
+    flex: 1;
+}
+
+.cart-book-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2E2E4E;
+}
+
+.cart-book-desc {
+    font-size: 15px;
+    color: #3F5461;
+    margin-top: 4px;
+}
+
+.cart-book-price {
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #742C36;
+}
+
+/* bottom buttons */
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.clear-cart-btn,
+.close-cart-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.clear-cart-btn {
+    background: #B32D2E;
+    color: #fff;
+}
+
+.close-cart-btn {
+    background: #2E2E4E;
+    color: #fff;
+}
+
+/* delete button (fixed clean version) */
+.remove-btn {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+    color: #b32d2e;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: color 0.25s ease, transform 0.25s ease;
+    transform: rotate(0deg);     /* FIX: remain straight before hover */
+}
+
+/* hover animation */
+.remove-btn:hover {
+    background: transparent !important;
+    border: none;
+    color: #8a1f20;
+    transform: rotate(12deg);    /* clean soft rotation */
+}

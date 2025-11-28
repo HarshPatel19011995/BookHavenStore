@@ -117,10 +117,11 @@
         <div class="col form-col">
             <h2>We’d Love to Hear From You</h2>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea placeholder="Message / Custom Order Details" rows="6" required></textarea>
+            <form id="contactForm" class="contact-form">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="emailAddress" placeholder="Email Address" required>
+                <textarea id="orderMessage" placeholder="Message / Custom Order Details" rows="6" required></textarea>
+
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
         </div>
@@ -140,10 +141,29 @@
 </section>
 
 
+
 </div>
 <!-- ======================= END PAGE CONTENT ======================= -->
 
+<!-- ========================= CART MODAL ========================= -->
+<div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
 
+        <h2 class="cart-title">Your Cart</h2>
+
+        <!-- Scrollable cart items -->
+        <div id="cartItems" class="cart-items-container">
+            <!-- Cart items will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Buttons -->
+        <div class="cart-buttons">
+            <button id="clearCartBtn" class="clear-cart-btn">Clear Cart</button>
+            <button id="closeCartBtn" class="close-cart-btn">Close</button>
+        </div>
+
+    </div>
+</div>
 <!-- ========================= FOOTER (TOP SECTION) ========================= -->
 <!-- ========================= FOOTER ========================= -->
 <footer class="footer">
@@ -184,6 +204,35 @@
 <div class="footer-bottom">
     © 2025 Book Haven Bookstore. All rights reserved
 </div>
+
+<script src="js/mobile-header.js"></script>
+<script src="js/cart.js"></script>
+
+
+
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("emailAddress").value.trim();
+    const message = document.getElementById("orderMessage").value.trim();
+
+    const orderData = {
+        name,
+        email,
+        message,
+        date: new Date().toLocaleString()
+    };
+
+    localStorage.setItem("customerOrder", JSON.stringify(orderData));
+
+    alert("Your message has been saved! Thank you.");
+    this.reset();
+});
+</script>
 
 </body>
 </html>

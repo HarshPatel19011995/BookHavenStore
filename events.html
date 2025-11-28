@@ -234,7 +234,25 @@
 
 </div>
 <!-- ======================= END PAGE CONTENT ======================= -->
+<!-- ========================= CART MODAL ========================= -->
+<div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
 
+        <h2 class="cart-title">Your Cart</h2>
+
+        <!-- Scrollable cart items -->
+        <div id="cartItems" class="cart-items-container">
+            <!-- Cart items will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Buttons -->
+        <div class="cart-buttons">
+            <button id="clearCartBtn" class="clear-cart-btn">Clear Cart</button>
+            <button id="closeCartBtn" class="close-cart-btn">Close</button>
+        </div>
+
+    </div>
+</div>
 
 <!-- ========================= FOOTER (TOP SECTION) ========================= -->
 <!-- ========================= FOOTER ========================= -->
@@ -277,7 +295,8 @@
     © 2025 Book Haven Bookstore. All rights reserved
 </div>
 
-
+<script src="js/mobile-header.js"></script>
+<script src="js/cart.js"></script>
 <script>
 const slider = document.querySelector('.testimonials-scroll');
 let isDown = false;
