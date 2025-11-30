@@ -69,14 +69,13 @@
 
 <!-- ======================= PAGE CONTENT WRAPPER ======================= -->
 <div class="page-content">
-    <!-- Add your hero or main page content here -->
 
     <section class="about-hero">
-    <div class="about-hero-content">
-        <h1>About Book Haven Bookstore</h1>
-        <p>Your Local Literary Haven Online</p>
-    </div>
-</section>
+        <div class="about-hero-content">
+            <h1>About Book Haven Bookstore</h1>
+            <p>Your Local Literary Haven Online</p>
+        </div>
+    </section>
 
     <div class="section-divider"></div>
     <div class="section-Wdivider"></div>
@@ -90,15 +89,12 @@
             <p>
                 Book Haven Bookstore is a local treasure for book enthusiasts, offering a diverse selection of books, magazines, journals, and office supplies. 
                 With a deep-rooted commitment to fostering literary exploration and a love for reading, 
-                it is embarking on the creation of an online presence that mirrors its dedication to the world of words. 
-                Serving a broad audience of book lovers and knowledge seekers, its central goal is to amplify its visibility, 
-                cultivate a vibrant literary community, and simplify the process of book inquiries and purchases. 
+                it is embarking on the creation of an online presence that mirrors its dedication to the world of words.
             </p>
 
             <p>
                 Its target audience comprises avid readers, students, and individuals in search of high-quality reading materials and office essentials. 
-                Book Haven Bookstore’s website theme revolves around celebrating the written word, creating an inviting digital space that encourages literary discovery,
-                and supporting intellectual growth.
+                Book Haven Bookstore’s website theme revolves around celebrating the written word.
             </p>
         </div>
 
@@ -121,7 +117,6 @@
                 <input type="text" id="fullName" placeholder="Full Name" required>
                 <input type="email" id="emailAddress" placeholder="Email Address" required>
                 <textarea id="orderMessage" placeholder="Message / Custom Order Details" rows="6" required></textarea>
-
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
         </div>
@@ -140,8 +135,6 @@
     </div>
 </section>
 
-
-
 </div>
 <!-- ======================= END PAGE CONTENT ======================= -->
 
@@ -151,20 +144,15 @@
 
         <h2 class="cart-title">Your Cart</h2>
 
-        <!-- Scrollable cart items -->
-        <div id="cartItems" class="cart-items-container">
-            <!-- Cart items will be inserted here by JavaScript -->
-        </div>
+        <div id="cartItems" class="cart-items-container"></div>
 
-        <!-- Buttons -->
         <div class="cart-buttons">
             <button id="clearCartBtn" class="clear-cart-btn">Clear Cart</button>
             <button id="closeCartBtn" class="close-cart-btn">Close</button>
         </div>
-
     </div>
 </div>
-<!-- ========================= FOOTER (TOP SECTION) ========================= -->
+
 <!-- ========================= FOOTER ========================= -->
 <footer class="footer">
     <div class="footer-container">
@@ -205,13 +193,17 @@
     © 2025 Book Haven Bookstore. All rights reserved
 </div>
 
+<!-- ========================= TOAST NOTIFICATION ========================= -->
+<div id="toast" class="toast">
+    <span id="toast-icon" class="toast-icon"></span>
+    <span id="toast-msg" class="toast-message"></span>
+</div>
+
+<!-- SCRIPTS -->
 <script src="js/mobile-header.js"></script>
 <script src="js/cart.js"></script>
 
-
-
-
-
+<!-- CONTACT FORM HANDLER (USES TOAST) -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -229,7 +221,8 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
     localStorage.setItem("customerOrder", JSON.stringify(orderData));
 
-    alert("Your message has been saved! Thank you.");
+    showToast("Your message has been saved! Thank you.", "success");
+
     this.reset();
 });
 </script>

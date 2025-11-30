@@ -1960,3 +1960,48 @@ button:hover,
     color: #8a1f20;
     transform: rotate(12deg);    /* clean soft rotation */
 }
+
+/* ========================= TOAST ========================= */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2E2E4E;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(40px);
+    pointer-events: none;
+
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    z-index: 99999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.toast.success { background: #3E5641; }   /* green */
+.toast.error { background: #742C36; }     /* red */
+.toast.warning { background: #B26D2E; }   /* orange */
+.toast.info { background: #2E2E4E; }      /* blue dark */
+
+.toast-icon {
+    font-size: 20px;
+}
+
+.toast-message {
+    font-weight: 500;
+}
